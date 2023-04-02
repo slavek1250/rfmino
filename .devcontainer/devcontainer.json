@@ -1,0 +1,59 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/alpine
+{
+    "name": "rfmino-dev-container",
+
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+
+    "runArgs": [
+        // Avoid adding a specified device (with e.g.: --device=/dev/ttyACM0),
+        // since it can get a different number based on attaching order. Mount
+        // the whole USB bus instead.
+        // https://stackoverflow.com/a/24231872
+        "-v", "/dev/bus/usb:/dev/bus/usb",
+        "--privileged"
+    ],
+
+    // Configure tool-specific properties.
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                // Code editing and management.
+                "eamodio.gitlens",
+                "jebbs.plantuml",
+                "shd101wyy.markdown-preview-enhanced",
+                "stkb.rewrap",
+                "streetsidesoftware.code-spell-checker",
+                "ybaumes.highlight-trailing-white-spaces",
+                "zachflower.uncrustify",
+
+                // Application development and debugging support.
+                "github.copilot-nightly",
+                "marus25.cortex-debug",
+                "ms-vscode.cpptools",
+                "mcu-debug.rtos-views",
+                "mcu-debug.peripheral-viewer",
+                "mcu-debug.memory-vie",
+
+                // Platform support.
+                "nordic-semiconductor.nrf-connect-extension-pack"
+            ],
+            "settings": {
+                "editor.formatOnSave": true,
+                "editor.formatOnPaste": true,
+                "editor.formatOnType": true,
+                "editor.defaultFormatter": "zachflower.uncrustify",
+                "editor.codeActionsOnSave": {
+                    "source.fixAll": true
+                },
+                "editor.renderWhitespace": "all",
+                "editor.indentSize": 4,
+                "uncrustify.configPath.linux": "${containerWorkspaceFolder}/Env/CodeBeautifier/uncrustify.cfg",
+                "nrf-connect.topdir": "/workdir",
+                "nrf-connect.toolchain.path": "PATH"
+            }
+        }
+    }
+}

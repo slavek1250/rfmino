@@ -1,0 +1,7 @@
+{
+    "nrf-connect.topdir": "/workdir",
+    "nrf-connect.toolchain.path": "PATH",
+    "cSpell.words": [
+        "rfmino"
+    ]
+}
