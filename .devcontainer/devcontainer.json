@@ -30,7 +30,6 @@
                 "zachflower.uncrustify",
 
                 // Application development and debugging support.
-                "github.copilot-nightly",
                 "marus25.cortex-debug",
                 "mcu-debug.memory-vie",
                 "mcu-debug.peripheral-viewer",
