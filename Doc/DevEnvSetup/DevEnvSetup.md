@@ -1,12 +1,12 @@
 # Development Environment for rfmino - Setup
 
 ## Introduction
-This project uses Visual Studio Code Insiders as a main IDE. It is also possible to use Visual Studio Code, but it is not recommended.
+This project uses Visual Studio Code as a main IDE.
 All development is done in a Docker container. This allows for a consistent development environment and minimizes the risk of errors due to different development environments.
 VS Code takes care of setting up the Docker container and starting it. The container is based on the [nordicplayground/nrfconnect-sdk:main](https://hub.docker.com/r/nordicplayground/nrfconnect-sdk/) image.
 
 ## Prerequisites
-- [Visual Studio Code Insiders](https://code.visualstudio.com/insiders/)
+- [Visual Studio Code](https://code.visualstudio.com/)
 - [Git](https://git-scm.com/downloads)
 - [Docker](https://www.docker.com/products/docker-desktop)
 
@@ -27,4 +27,8 @@ west flash
 It should build and flash the blinky sample to the board.
 
 ## How to
+### Windows
+[Attach USB devices to WSL](https://learn.microsoft.com/en-us/windows/wsl/connect-usb)
+[GitHub credentials setup](https://cli.github.com/manual/gh_auth_login)
+### Ubuntu
 [Install docker on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
