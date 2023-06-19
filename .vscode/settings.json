@@ -3,5 +3,8 @@
     "nrf-connect.toolchain.path": "PATH",
     "cSpell.words": [
         "rfmino"
+    ],
+    "nrf-connect.applications": [
+        "${workspaceFolder}/App/hello_world"
     ]
 }

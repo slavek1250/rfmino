@@ -32,10 +32,11 @@
                 // Application development and debugging support.
                 "github.copilot-nightly",
                 "marus25.cortex-debug",
-                "ms-vscode.cpptools",
-                "mcu-debug.rtos-views",
-                "mcu-debug.peripheral-viewer",
                 "mcu-debug.memory-vie",
+                "mcu-debug.peripheral-viewer",
+                "mcu-debug.rtos-views",
+                "ms-vscode.cpptools",
+                "twxs.cmake",
 
                 // Platform support.
                 "nordic-semiconductor.nrf-connect-extension-pack"
