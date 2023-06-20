@@ -1,0 +1,12 @@
+{
+    "File Header": {
+        "prefix": "rfmFileHeader",
+        "body": [
+            "${1|///,#,@rem|} @file ${TM_FILENAME}",
+            "${1|///,#,@rem|}",
+            "${1|///,#,@rem|} @note Copyright (c) ${CURRENT_YEAR} rfmino",
+            "",
+            "$0"
+        ]
+    },
+}
