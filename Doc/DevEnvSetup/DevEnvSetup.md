@@ -34,5 +34,8 @@ It should build and flash the blinky sample to the board.
 #### Attach USB device
 To attach a USB device connected to the Windows host use script `Setup.cmd` that allows attaching USB devices to the WSL which then binds them to the dev container.
 
+### Line endings
+Make sure to configure GIT to auto replace CRLF when committing `git config core.autocrlf true` - it is done by `Setup.cmd`.
+
 ### Ubuntu
 [Install docker on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
