@@ -4,4 +4,6 @@
 
 @echo off
 
+git config core.autocrlf true
+
 call %~dp0\Env\Windows\WslUsbDevicesMngr.cmd
