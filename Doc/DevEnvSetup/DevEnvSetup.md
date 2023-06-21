@@ -30,5 +30,9 @@ It should build and flash the blinky sample to the board.
 ### Windows
 [Attach USB devices to WSL](https://learn.microsoft.com/en-us/windows/wsl/connect-usb)
 [GitHub credentials setup](https://cli.github.com/manual/gh_auth_login)
+
+#### Attach USB device
+To attach a USB device connected to the Windows host use script `Setup.cmd` that allows attaching USB devices to the WSL which then binds them to the dev container.
+
 ### Ubuntu
 [Install docker on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
