@@ -1,3 +1,7 @@
+/// @file extensions.json
+///
+/// @note Copyright (c) 2023 rfmino
+
 {
     "recommendations": [
         "eamodio.gitlens",

@@ -1,3 +1,7 @@
+/// @file rfmino.code-snippets
+///
+/// @note Copyright (c) 2023 rfmino
+
 {
     "File Header": {
         "prefix": "rfmFileHeader",

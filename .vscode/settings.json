@@ -1,3 +1,7 @@
+/// @file settings.json
+///
+/// @note Copyright (c) 2023 rfmino
+
 {
     "nrf-connect.topdir": "/workdir",
     "nrf-connect.toolchain.path": "PATH",
