@@ -4,7 +4,8 @@
     "name": "rfmino-dev-container",
 
     "build": {
-        "dockerfile": "Dockerfile"
+        "dockerfile": "Dockerfile",
+        "context": ".."
     },
 
     "runArgs": [
@@ -19,6 +20,11 @@
     "features": {
         "ghcr.io/devcontainers/features/github-cli:1": {}
     },
+
+    "mounts": [
+        // Mount persistent history.
+        "source=rfmino-bashhistory,target=/commandhistory,type=volume"
+    ],
 
     // Configure tool-specific properties.
     "customizations": {
