@@ -12,7 +12,8 @@ COPY Env/Bash/* .
 RUN apt-get update \
     && apt-get -y install uncrustify \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/* \
-    && echo 'source /root/config/bash-setup.sh' >> /root/.bashrc
+    && echo 'source /root/config/bash-setup.sh' >> /root/.bashrc \
+    && git config --global core.autocrlf input
 
 # Launch bash shell by default
 CMD ["/bin/bash"]
