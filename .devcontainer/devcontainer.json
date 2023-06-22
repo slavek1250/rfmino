@@ -1,10 +1,13 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/alpine
+/// @file devcontainer.json
+///
+/// @note Copyright (c) 2023 rfmino
+
 {
     "name": "rfmino-dev-container",
 
     "build": {
-        "dockerfile": "Dockerfile"
+        "dockerfile": "Dockerfile",
+        "context": ".."
     },
 
     "runArgs": [
@@ -16,13 +19,24 @@
         "--privileged"
     ],
 
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+
+    "mounts": [
+        // Mount persistent history.
+        "source=rfmino-bashhistory,target=/commandhistory,type=volume"
+    ],
+
     // Configure tool-specific properties.
     "customizations": {
         "vscode": {
             "extensions": [
                 // Code editing and management.
                 "eamodio.gitlens",
+                "github.vscode-pull-request-github",
                 "jebbs.plantuml",
+                "medo64.render-crlf",
                 "shd101wyy.markdown-preview-enhanced",
                 "stkb.rewrap",
                 "streetsidesoftware.code-spell-checker",
@@ -30,12 +44,12 @@
                 "zachflower.uncrustify",
 
                 // Application development and debugging support.
-                "github.copilot-nightly",
                 "marus25.cortex-debug",
-                "ms-vscode.cpptools",
-                "mcu-debug.rtos-views",
-                "mcu-debug.peripheral-viewer",
                 "mcu-debug.memory-vie",
+                "mcu-debug.peripheral-viewer",
+                "mcu-debug.rtos-views",
+                "ms-vscode.cpptools",
+                "twxs.cmake",
 
                 // Platform support.
                 "nordic-semiconductor.nrf-connect-extension-pack"

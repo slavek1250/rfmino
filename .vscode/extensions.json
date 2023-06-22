@@ -1,8 +1,13 @@
+/// @file extensions.json
+///
+/// @note Copyright (c) 2023 rfmino
+
 {
     "recommendations": [
         "eamodio.gitlens",
         "github.copilot-nightly",
         "jebbs.plantuml",
+        "medo64.render-crlf",
         "ms-azuretools.vscode-docker",
         "ms-vscode-remote.vscode-remote-extensionpack",
         "shd101wyy.markdown-preview-enhanced",
