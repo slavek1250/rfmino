@@ -5,12 +5,86 @@
 {
     "File Header": {
         "prefix": "rfmFileHeader",
+        "description": "Rfmino: File header",
         "body": [
             "${1|///,#,@rem|} @file ${TM_FILENAME}",
             "${1|///,#,@rem|}",
             "${1|///,#,@rem|} @note Copyright (c) ${CURRENT_YEAR} rfmino",
             "",
             "$0"
+        ]
+    },
+    "Include Guard": {
+        "prefix": "rfmIncludeGuard",
+        "scope": "cpp",
+        "description": "Rfmino: Include guard",
+        "body": [
+            "#ifndef RFM_${RELATIVE_FILEPATH/.+Src[\\/\\\\](\\w+)[\\/\\\\].+/${1:/upcase}/}_${TM_DIRECTORY/.+[\\/\\\\](.+)/${1:/upcase}/g}_${TM_FILENAME/(.+)\\.(.+)/${1:/upcase}_${2:/upcase}/}",
+            "#define RFM_${RELATIVE_FILEPATH/.+Src[\\/\\\\](\\w+)[\\/\\\\].+/${1:/upcase}/}_${TM_DIRECTORY/.+[\\/\\\\](.+)/${1:/upcase}/g}_${TM_FILENAME/(.+)\\.(.+)/${1:/upcase}_${2:/upcase}/}",
+            "",
+            "$0",
+            "#endif",
+            ""
+        ]
+    },
+    "Namespaces scructure": {
+        "prefix": "rfmNamespaces",
+        "scope": "cpp",
+        "description": "Rfmino: Namespaces structure",
+        "body": [
+            "namespace Rfm",
+            "{",
+            "",
+            "namespace ${1:${RELATIVE_FILEPATH/.+Src[\\/\\\\](\\w+)[\\/\\\\].+/$1/}}",
+            "{",
+            "",
+            "namespace ${2:${TM_DIRECTORY/.+[\\/\\\\](.+)/$1/}}",
+            "{",
+            "",
+            "$0",
+            "}",
+            "",
+            "}",
+            "",
+            "}",
+            ""
+        ]
+    },
+    "Non-Copyable Class": {
+        "prefix": "rfmNonCopyableClass",
+        "scope": "cpp",
+        "description": "Rfmino: Non-Copyable Class",
+        "body": [
+            "class ${1:$TM_FILENAME_BASE}",
+            "{",
+            "public:",
+            "    ${1:$TM_FILENAME_BASE}();",
+            "",
+            "    $0",
+            "",
+            "private:",
+            "    ${1:$TM_FILENAME_BASE}(const ${1:$TM_FILENAME_BASE}&) = delete;",
+            "    void operator=(const ${1:$TM_FILENAME_BASE}&) = delete;",
+            "};",
+            ""
+        ]
+    },
+    "Interface": {
+        "prefix": "rfmInterface",
+        "scope": "cpp",
+        "description": "Rfmino: Interface",
+        "body": [
+            "class ${1:$TM_FILENAME_BASE}",
+            "{",
+            "public:",
+            "    $0",
+            "",
+            "${2|public,protected|}:",
+            "    virtual ~${1:$TM_FILENAME_BASE}()",
+            "    {",
+            "    }",
+            "};",
+            ""
         ]
     }
 }
