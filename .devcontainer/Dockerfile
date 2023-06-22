@@ -2,7 +2,7 @@
 #
 # @note Copyright (c) 2023 rfmino
 
-FROM nordicplayground/nrfconnect-sdk:main
+FROM nordicplayground/nrfconnect-sdk:v2.4-branch
 
 WORKDIR /root/config
 
