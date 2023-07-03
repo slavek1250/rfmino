@@ -3,4 +3,4 @@
 @rem @note Copyright (c) 2023 rfmino
 
 @echo off
-powershell -ExecutionPolicy Bypass -File  %~dp0\WslUsbDevicesMngr.ps1 %*
+powershell -command "Start-Process powershell -Verb RunAs -ArgumentList \"-ExecutionPolicy Bypass -File  %~dp0\WslUsbDevicesMngr.ps1 %*\""

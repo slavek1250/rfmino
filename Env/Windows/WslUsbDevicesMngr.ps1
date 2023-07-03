@@ -139,7 +139,7 @@ function GetDeviceId()
     $userInput = Read-Host "Enter the index value (0 - $maxIndex) or q"
 
     # Validate the input
-    while ($userInput -ne "q" -and ($userInput -lt 0 -or $userInput -gt $maxIndex)) {
+    while ($userInput -ne "q" -and ([int]$userInput -lt 0 -or [int]$userInput -gt [int]$maxIndex)) {
 
         Write-Host "Invalid index value. Please enter a value within the range of 0 to $maxIndex or q to exit."
         $userInput = Read-Host "Enter the index value (0 - $maxIndex) or q"
